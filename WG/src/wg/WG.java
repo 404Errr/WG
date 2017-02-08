@@ -24,10 +24,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
-//import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class WG extends JFrame {
 	public static final String version = "v0";
 	private static final String Title = "You This Read Wrong";
@@ -103,7 +103,7 @@ public class WG extends JFrame {
 	}
 }
 
-
+@SuppressWarnings("serial")
 class Panel extends JPanel implements Runnable {
 	int id, panelX = (WG.width-7)/WG.windowX, panelY = (WG.height-30)/WG.windowY, renderDistanceX, renderDistanceY, flashTimer, cellSize = WG.cellSize;
 	static int sizeMM = 2+(3/Level.sizeX);
