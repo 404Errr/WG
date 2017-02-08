@@ -46,7 +46,9 @@ public class WG extends JFrame {
 	public static long SEED = 0L;//0 for random
 	public static final int[][] selectedLevel = /*LevelLayout.test;//*/LevelGen.generateLevel(true, false);//LevelGen.editSegment();//LevelGen.generateLevel(true);//<set that to false
 
-	public static void main(String[] args) throws InterruptedException {run();}
+	public static void main(String[] args) throws InterruptedException {
+		run();
+	}
 
 	public static void run() throws InterruptedException {
 		if (editMode) {windowX = 1;windowY = 1;playerCount = 1;visiblePlayerCount = 1;}
@@ -118,20 +120,21 @@ class Panel extends JPanel implements Runnable {
 	static {loadTextures();}
 	static void loadTextures() {
 		try {
-			floor0 = ImageIO.read(new File("S:\\WG/floor0.png"));
-			floor1 = ImageIO.read(new File("S:\\WG/floor1.png"));
-			floor2 = ImageIO.read(new File("S:\\WG/floor2.png"));
-			floor3 = ImageIO.read(new File("S:\\WG/floor3.png"));
-			floor4 = ImageIO.read(new File("S:\\WG/floor4.png"));
-			floor5 = ImageIO.read(new File("S:\\WG/floor5.png"));
-			floor6 = ImageIO.read(new File("S:\\WG/floor6.png"));
-			wall = ImageIO.read(new File("S:\\WG/wall.png"));
-			window = ImageIO.read(new File("S:\\WG/window.png"));
-			shield = ImageIO.read(new File("S:\\WG/shield.png"));
-			crate = ImageIO.read(new File("S:\\WG/crate.png"));
-			item = ImageIO.read(new File("S:\\WG/item.png"));
-			c4 = ImageIO.read(new File("S:\\WG/c4.png"));
-			rocket = ImageIO.read(new File("S:\\WG/rocket.png"));
+			final String rootDir = "S:\\Eclipse/WG/";
+			floor0 = ImageIO.read(new File(rootDir+"floor0.png"));
+			floor1 = ImageIO.read(new File(rootDir+"floor1.png"));
+			floor2 = ImageIO.read(new File(rootDir+"floor2.png"));
+			floor3 = ImageIO.read(new File(rootDir+"floor3.png"));
+			floor4 = ImageIO.read(new File(rootDir+"floor4.png"));
+			floor5 = ImageIO.read(new File(rootDir+"floor5.png"));
+			floor6 = ImageIO.read(new File(rootDir+"floor6.png"));
+			wall = ImageIO.read(new File(rootDir+"wall.png"));
+			window = ImageIO.read(new File(rootDir+"window.png"));
+			shield = ImageIO.read(new File(rootDir+"shield.png"));
+			crate = ImageIO.read(new File(rootDir+"crate.png"));
+			item = ImageIO.read(new File(rootDir+"item.png"));
+			c4 = ImageIO.read(new File(rootDir+"c4.png"));
+			rocket = ImageIO.read(new File(rootDir+"rocket.png"));
 		} catch (Exception e) {e.printStackTrace();System.out.println("Pictures no worky work.");}
 	}
 
@@ -1244,7 +1247,7 @@ class Edit {
 			board.append("}"+((y<sizeX-1)?",\n":""));
 		}
 		System.out.println(board);
-		String fileName = "S:\\WG/Maps/Map "+WG.SEED+" "+sizeX+"x"+sizeY+" ("+sizeX/15+"x"+sizeY/15+") "+System.currentTimeMillis()+".txt";
+		String fileName = "S:\\Eclipse/WG/Maps/Map "+WG.SEED+" "+sizeX+"x"+sizeY+" ("+sizeX/15+"x"+sizeY/15+") "+System.currentTimeMillis()+".txt";
 		System.out.println(fileName);
 		FileWriter fw = new FileWriter(new File(fileName));
 
