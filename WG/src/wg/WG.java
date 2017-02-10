@@ -120,7 +120,8 @@ class Panel extends JPanel implements Runnable {
 	static {loadTextures();}
 	static void loadTextures() {
 		try {
-			final String rootDir = "S:\\Eclipse/WG/";
+//			final String rootDir = "S:\\Eclipse/WG/";
+			final String rootDir = "src/data/";
 			floor0 = ImageIO.read(new File(rootDir+"floor0.png"));
 			floor1 = ImageIO.read(new File(rootDir+"floor1.png"));
 			floor2 = ImageIO.read(new File(rootDir+"floor2.png"));
@@ -1247,7 +1248,7 @@ class Edit {
 			board.append("}"+((y<sizeX-1)?",\n":""));
 		}
 		System.out.println(board);
-		String fileName = "S:\\Eclipse/WG/Maps/Map "+WG.SEED+" "+sizeX+"x"+sizeY+" ("+sizeX/15+"x"+sizeY/15+") "+System.currentTimeMillis()+".txt";
+		String fileName = "src/data/Maps/Map "+WG.SEED+" "+sizeX+"x"+sizeY+" ("+sizeX/15+"x"+sizeY/15+") "+System.currentTimeMillis()+".txt";
 		System.out.println(fileName);
 		FileWriter fw = new FileWriter(new File(fileName));
 
